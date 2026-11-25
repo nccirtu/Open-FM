@@ -1,0 +1,376 @@
+:root {
+    --nw-radius-card: 0.375rem;
+    --nw-radius-control: 0.375rem;
+    --nw-font-feature: 'cv02', 'cv03', 'cv04', 'cv11', 'ss03';
+}
+
+.fi-body {
+    --topbar-height: 3.5rem;
+    font-feature-settings: var(--nw-font-feature);
+    @apply bg-gray-50 text-gray-900;
+}
+
+.dark .fi-body {
+    background-color: #0f0f0f;
+    @apply text-gray-200;
+}
+
+.fi-header-heading {
+    @apply text-xl font-semibold tracking-tight text-gray-950 dark:text-white;
+}
+
+.fi-header-subheading {
+    @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.fi-breadcrumbs-item-label {
+    @apply text-xs font-medium tracking-wide;
+}
+
+.fi-topbar {
+    @apply border-b border-gray-200 bg-white shadow-none ring-0 dark:border-white/10 dark:bg-[#151515];
+}
+
+.fi-topbar-item-btn {
+    @apply rounded-md px-2.5 py-1.5 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white;
+}
+
+.fi-topbar-item.fi-active > .fi-topbar-item-btn,
+.fi-topbar-item.fi-active .fi-dropdown-trigger > .fi-topbar-item-btn {
+    @apply bg-gray-100 text-gray-950 dark:bg-white/10 dark:text-white;
+}
+
+.fi-topbar-item-btn .fi-icon {
+    @apply text-gray-400 dark:text-gray-500;
+}
+
+.fi-topbar-item.fi-active .fi-icon {
+    @apply text-gray-950 dark:text-white;
+}
+
+.fi-sidebar {
+    @apply border-e border-gray-200 bg-white dark:border-white/10 dark:bg-[#151515];
+}
+
+.fi-sidebar-item-btn {
+    @apply rounded-md;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    @apply bg-gray-100 dark:bg-white/10;
+}
+
+.fi-sidebar-group-label {
+    @apply text-xs font-semibold tracking-wider text-gray-400 uppercase dark:text-gray-500;
+}
+
+.fi-section:not(.fi-section-not-contained):not(.fi-aside),
+.fi-section:not(.fi-section-not-contained).fi-aside > .fi-section-content-ctn,
+.fi-wi-stats-overview-stat {
+    border-radius: var(--nw-radius-card);
+    @apply bg-white shadow-none ring-1 ring-gray-200 dark:bg-[#171717] dark:ring-white/10;
+}
+
+.fi-section:not(.fi-section-not-contained):not(.fi-aside) > .fi-section-header {
+    @apply px-5 py-3.5;
+}
+
+.fi-section:not(.fi-section-not-contained):not(.fi-aside).fi-section-has-header:not(.fi-collapsed) > .fi-section-content-ctn {
+    @apply border-gray-200 dark:border-white/10;
+}
+
+.fi-section:not(.fi-section-not-contained):not(.fi-divided) > .fi-section-content-ctn > .fi-section-content {
+    @apply p-5;
+}
+
+.fi-section-header-heading {
+    @apply text-sm font-semibold tracking-tight text-gray-950 dark:text-white;
+}
+
+.fi-section-header-description {
+    @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+.fi-section.fi-secondary {
+    @apply bg-gray-50 dark:bg-white/[0.03];
+}
+
+.fi-wi-stats-overview-stat-label {
+    @apply text-xs font-medium tracking-wider text-gray-500 uppercase dark:text-gray-400;
+}
+
+.fi-wi-stats-overview-stat-value {
+    font-variant-numeric: tabular-nums;
+    @apply text-2xl font-semibold tracking-tight text-gray-950 dark:text-white;
+}
+
+.fi-wi-stats-overview-stat {
+    --stat-chart-border-width: 1.5;
+    --stat-chart-line-tension: 0.3;
+    --stat-chart-fill: start;
+}
+
+.fi-wi-chart {
+    --chart-border-width: 1.5;
+    --chart-line-tension: 0.3;
+    --chart-point-radius: 0;
+    --chart-bar-border-radius: 3;
+    --chart-tooltip-corner-radius: 6;
+}
+
+.fi-wi-chart .fi-wi-chart-grid-color {
+    @apply text-gray-200 dark:text-white/10;
+}
+
+.fi-wi-chart .fi-wi-chart-text-color {
+    @apply text-gray-500 dark:text-gray-400;
+}
+
+.fi-ta-ctn {
+    border-radius: var(--nw-radius-card);
+    @apply bg-white shadow-none ring-0 dark:bg-[#171717];
+}
+
+.fi-ta-table > thead > tr {
+    @apply bg-gray-50 dark:bg-white/[0.03];
+}
+
+.fi-ta-table > thead > tr > .fi-ta-header-cell,
+.fi-ta-table > thead > tr > .fi-ta-empty-header-cell,
+.fi-ta-table > thead > tr > .fi-ta-selection-cell {
+    @apply bg-transparent;
+}
+
+.fi-ta-header-cell-label {
+    @apply text-[11px] font-semibold tracking-wider text-gray-500 uppercase dark:text-gray-400;
+}
+
+.fi-ta-header-cell-sort-icon {
+    @apply text-gray-400;
+}
+
+.fi-ta-cell {
+    font-variant-numeric: tabular-nums;
+}
+
+.fi-ta-row {
+    @apply transition-colors;
+}
+
+.fi-ta-row:hover {
+    @apply bg-gray-50 dark:bg-white/[0.03];
+}
+
+.fi-ta-row.fi-selected {
+    @apply bg-gray-100 dark:bg-white/[0.06];
+}
+
+.fi-ta-table {
+    @apply divide-gray-200 dark:divide-white/5;
+}
+
+.fi-ta-content-ctn,
+.fi-ta-header,
+.fi-ta-footer {
+    @apply border-gray-200 dark:border-white/10;
+}
+
+.fi-ta-text-item-label {
+    @apply text-sm text-gray-800 dark:text-gray-200;
+}
+
+.fi-ta-empty-state-heading {
+    @apply text-base font-semibold text-gray-900 dark:text-white;
+}
+
+.fi-btn {
+    border-radius: var(--nw-radius-control);
+    @apply shadow-none;
+}
+
+.fi-btn.fi-color-gray:not(.fi-outlined) {
+    @apply bg-white ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10;
+}
+
+.fi-btn.fi-color-primary:not(.fi-outlined) {
+    @apply bg-gray-950 text-white ring-0 hover:bg-gray-800 dark:bg-white/5 dark:text-white dark:ring-1 dark:ring-white/10 dark:hover:bg-white/10;
+}
+
+.fi-btn.fi-color-primary:not(.fi-outlined) .fi-icon,
+.fi-btn.fi-color-primary:not(.fi-outlined) .fi-btn-label {
+    @apply text-inherit;
+}
+
+.fi-icon-btn {
+    border-radius: var(--nw-radius-control);
+}
+
+.fi-input-wrp {
+    border-radius: var(--nw-radius-control);
+    @apply bg-white shadow-none ring-1 ring-gray-200 dark:bg-white/[0.04] dark:ring-white/10;
+}
+
+.fi-input-wrp:not(.fi-disabled):has(.fi-input:focus, .fi-select-input:focus, [role='combobox']:focus-visible) {
+    @apply ring-2 ring-gray-950/60 dark:ring-white/40;
+}
+
+.fi-input-wrp.fi-invalid {
+    @apply ring-danger-500 dark:ring-danger-400;
+}
+
+.fi-input,
+.fi-select-input {
+    @apply text-sm text-gray-950 placeholder:text-gray-400 dark:text-white dark:placeholder:text-gray-500;
+}
+
+.fi-fo-field-label-content,
+.fi-fo-field-wrp-label > .fi-fo-field-wrp-label-content,
+.fi-sc-component-label {
+    @apply text-sm font-medium text-gray-700 dark:text-gray-300;
+}
+
+.fi-fo-field-wrp-helper-text,
+.fi-fo-field-wrp-hint {
+    @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+.fi-checkbox-input,
+.fi-radio-input {
+    @apply rounded-[4px] border-gray-300 dark:border-white/20;
+}
+
+.fi-toggle > button {
+    @apply ring-0;
+}
+
+.fi-badge {
+    @apply rounded-md font-medium tracking-wide ring-1 ring-inset;
+}
+
+.fi-badge.fi-size-md,
+.fi-badge.fi-size-sm {
+    @apply text-xs;
+}
+
+.fi-tabs:not(.fi-contained) {
+    border-radius: var(--nw-radius-card);
+    @apply bg-white shadow-none ring-1 ring-gray-200 dark:bg-[#171717] dark:ring-white/10;
+}
+
+.fi-tabs-item {
+    @apply rounded-md;
+}
+
+.fi-tabs-item.fi-active {
+    @apply bg-gray-100 dark:bg-white/10;
+}
+
+.fi-tabs-item.fi-active .fi-tabs-item-label,
+.fi-tabs-item.fi-active > .fi-icon {
+    @apply text-gray-950 dark:text-white;
+}
+
+.fi-sc-tabs:not(.fi-contained) {
+    @apply bg-transparent p-0 shadow-none ring-0;
+}
+
+.fi-sc-tabs.fi-contained {
+    border-radius: var(--nw-radius-card);
+    @apply bg-white shadow-none ring-1 ring-gray-200 dark:bg-[#171717] dark:ring-white/10;
+}
+
+.fi-dropdown-panel {
+    border-radius: var(--nw-radius-card);
+    @apply bg-white shadow-lg ring-1 ring-gray-200 dark:bg-[#1c1c1c] dark:ring-white/10;
+}
+
+.fi-dropdown-list-item {
+    @apply rounded-md text-sm;
+}
+
+.fi-modal-window {
+    border-radius: var(--nw-radius-card);
+    @apply ring-1 ring-gray-200 dark:bg-[#171717] dark:ring-white/10;
+}
+
+.fi-modal-header,
+.fi-modal-footer {
+    @apply border-gray-200 dark:border-white/10;
+}
+
+.fi-modal-heading {
+    @apply text-base font-semibold tracking-tight;
+}
+
+.fi-no-notification {
+    border-radius: var(--nw-radius-card);
+    @apply shadow-lg ring-1 ring-gray-200 dark:bg-[#1c1c1c] dark:ring-white/10;
+}
+
+.fi-in-entry-wrp-label > .fi-in-entry-wrp-label-content {
+    @apply text-xs font-medium tracking-wide text-gray-500 uppercase dark:text-gray-400;
+}
+
+.fi-in-text-item-label {
+    @apply text-sm text-gray-900 dark:text-gray-100;
+}
+
+.fi-simple-layout {
+    @apply bg-gray-50 dark:bg-[#0f0f0f];
+}
+
+.fi-simple-main {
+    border-radius: var(--nw-radius-card);
+    @apply bg-white shadow-none ring-1 ring-gray-200 dark:bg-[#171717] dark:ring-white/10;
+}
+
+.fi-simple-header-heading {
+    @apply text-xl font-semibold tracking-tight;
+}
+
+.dark ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background-color: rgb(255 255 255 / 0.12);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+label.fi-btn.fi-color:not(.fi-outlined) {
+    @apply bg-white text-gray-700 ring-1 ring-gray-200 hover:bg-gray-50 hover:text-gray-950 dark:bg-transparent dark:text-gray-300 dark:ring-white/15 dark:hover:bg-white/5 dark:hover:text-white;
+}
+
+label.fi-btn.fi-color:not(.fi-outlined) .fi-icon {
+    @apply text-gray-400 dark:text-gray-500;
+}
+
+input:checked + label.fi-btn.fi-color:not(.fi-outlined) {
+    background-color: var(--bg);
+    color: var(--text);
+    @apply ring-0;
+}
+
+input:checked + label.fi-btn.fi-color:not(.fi-outlined):where(.dark, .dark *) {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+input:checked + label.fi-btn.fi-color-primary:not(.fi-outlined) {
+    @apply bg-gray-950 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200;
+}
+
+input:checked + label.fi-btn.fi-color:not(.fi-outlined) .fi-icon {
+    color: inherit;
+}
+
+.fc-view-button.fi-color-primary:not(.fi-outlined) {
+    @apply dark:bg-white dark:text-gray-950 dark:ring-0 dark:hover:bg-gray-200;
+}

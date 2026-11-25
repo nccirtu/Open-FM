@@ -1,0 +1,17 @@
+{
+    "key": "at",
+    "country": "AT",
+    "locale": "de",
+    "version": "test",
+    "fractions": [
+        { "code": "20 01 01", "name": "Papier/Pappe", "group": "paper", "density_kg_m3": 60, "treatment": "R3" }
+    ],
+    "rules": {
+        "separation_quota_pct": null,
+        "quota_check_due": null,
+        "register_deadline_days": null,
+        "retention_years": 7,
+        "hazardous_threshold_t": null
+    },
+    "evidence_types": ["waste_management_concept", "waste_contract"]
+}

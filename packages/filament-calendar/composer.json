@@ -1,0 +1,25 @@
+{
+    "name": "open-fm/filament-calendar",
+    "description": "Calendar widget for Filament: month, week and list views rendered on the server, events linked to URLs or Filament actions.",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "AGPL-3.0-or-later",
+    "require": {
+        "php": "^8.4",
+        "filament/filament": "^5.0",
+        "spatie/laravel-package-tools": "^1.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenFm\\FilamentCalendar\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OpenFm\\FilamentCalendar\\FilamentCalendarServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

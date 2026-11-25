@@ -1,0 +1,149 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+@import '../../../../vendor/slimani/filament-media-manager/resources/css/media-manager.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+@source '../../../../vendor/slimani/filament-media-manager/resources/**/*';
+@source '../../../../vendor/cafm/form-builder/resources/views/**/*';
+@source '../../../../vendor/cafm/form-builder/src/**/*';
+@source '../../../../vendor/relaticle/flowforge/resources/**/*';
+@source '../../../../vendor/cafm/receipt-capture/resources/views/**/*';
+@source '../../../../vendor/cafm/structure-tree/resources/views/**/*';
+@source '../../../../vendor/cafm/qr-code/resources/views/**/*';
+@source '../../../../vendor/cafm/gantt-chart/resources/views/**/*';
+@source '../../../../vendor/johnrivera7/filament-custom-dashboard-widgets/resources/views/**/*';
+@source '../../../../vendor/packstub/filament-flow/resources/views/**/*';
+@source '../../../../vendor/cafm/receipt-capture/src/**/*';
+
+@import '../nightwatch.css';
+
+.fi-wg-widget .fi-wi-chart-frame {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 0;
+}
+
+.fi-wg-grid:not(.gs-1) .fi-wg-item-content:has(.fi-ta) {
+    overflow-y: auto;
+}
+
+.fi-wg-grid.gs-1 {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+}
+
+.fi-wg-grid.gs-1 > .grid-stack-item {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.fi-wg-grid.gs-1 > .grid-stack-item > .grid-stack-item-content {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    margin: 0.5rem 0;
+    overflow: visible;
+}
+
+.fi-wg-grid.gs-1 .fi-wi-chart-frame {
+    height: 18rem;
+}
+
+@keyframes fi-wg-shimmer {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes fi-wg-fail-open {
+    to {
+        visibility: visible;
+        min-height: 0;
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+@keyframes fi-wg-fail-open-footer {
+    to {
+        visibility: visible;
+    }
+}
+
+@keyframes fi-wg-fail-open-skeleton {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fi-wg-reveal {
+    from {
+        opacity: 0;
+    }
+}
+
+html:not([data-fi-wg-ready]) .fi-wg-grid {
+    position: relative;
+    visibility: hidden;
+    min-height: 70vh;
+    max-height: 70vh;
+    overflow: hidden;
+    animation: fi-wg-fail-open 0s linear 6s forwards;
+}
+
+html:not([data-fi-wg-ready]) .fi-wg-grid::before,
+html:not([data-fi-wg-ready]) .fi-wg-grid::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    visibility: visible;
+    border-radius: 0.75rem;
+    background-image: linear-gradient(
+        90deg,
+        color-mix(in srgb, currentColor 6%, transparent) 25%,
+        color-mix(in srgb, currentColor 12%, transparent) 50%,
+        color-mix(in srgb, currentColor 6%, transparent) 75%
+    );
+    background-size: 200% 100%;
+    animation:
+        fi-wg-shimmer 1.6s linear infinite,
+        fi-wg-fail-open-skeleton 0s linear 6s forwards;
+}
+
+html:not([data-fi-wg-ready]) .fi-wg-grid::before {
+    top: 0;
+    height: 7rem;
+}
+
+html:not([data-fi-wg-ready]) .fi-wg-grid::after {
+    top: 8rem;
+    bottom: 0;
+}
+
+html:has(.fi-wg-grid) {
+    scrollbar-gutter: stable;
+}
+
+html:not([data-fi-wg-ready]):has(.fi-wg-grid) .fi-footer {
+    visibility: hidden;
+    animation: fi-wg-fail-open-footer 0s linear 6s forwards;
+}
+
+html[data-fi-wg-ready] .fi-wg-grid {
+    animation: fi-wg-reveal 180ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:not([data-fi-wg-ready]) .fi-wg-grid::before,
+    html:not([data-fi-wg-ready]) .fi-wg-grid::after {
+        animation: fi-wg-fail-open-skeleton 0s linear 6s forwards;
+    }
+
+    html[data-fi-wg-ready] .fi-wg-grid {
+        animation: none;
+    }
+}

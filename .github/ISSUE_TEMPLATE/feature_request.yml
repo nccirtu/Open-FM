@@ -1,0 +1,22 @@
+name: Funktion vorschlagen
+description: Eine Idee oder ein Bedarf für Open-FM.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Welches Problem soll gelöst werden?
+      description: Beschreibe den Anwendungsfall, am besten aus Sicht von Kommune, Unternehmen, Haustechnik oder Melder.
+    validations:
+      required: true
+  - type: textarea
+    id: vorschlag
+    attributes:
+      label: Wie könnte die Lösung aussehen?
+    validations:
+      required: true
+  - type: textarea
+    id: alternativen
+    attributes:
+      label: Alternativen
+      description: Gibt es Umgehungen oder andere Lösungswege?

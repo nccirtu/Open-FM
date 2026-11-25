@@ -1,0 +1,49 @@
+name: Fehler melden
+description: Etwas funktioniert nicht wie erwartet.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sicherheitslücken bitte **nicht** hier melden, sondern über den Reiter „Security“ („Report a vulnerability“).
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: Was ist passiert?
+      description: Kurze Beschreibung des Fehlers.
+    validations:
+      required: true
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Schritte zum Nachstellen
+      placeholder: |
+        1. Panel öffnen …
+        2. Klicken auf …
+        3. Fehler sehen …
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Erwartetes Verhalten
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Open-FM-Version
+      placeholder: 1.0.0-beta.1
+    validations:
+      required: true
+  - type: textarea
+    id: umgebung
+    attributes:
+      label: Umgebung
+      description: PHP-Version, Datenbank (MySQL/MariaDB/SQLite), Browser, installierte Plugins.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Fehlermeldung oder Log
+      description: Bitte ohne Passwörter, Tokens und personenbezogene Daten.
+      render: shell

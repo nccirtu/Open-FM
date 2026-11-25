@@ -1,0 +1,19 @@
+{
+    "key": "de",
+    "country": "DE",
+    "locale": "de",
+    "version": "test",
+    "fractions": [
+        { "code": "20 01 01", "name": "Papier/Pappe", "group": "paper", "density_kg_m3": 60, "treatment": "R3", "color": "#2f68cc" },
+        { "code": "20 03 01", "name": "Gemischte Siedlungsabfälle", "group": "mixed", "density_kg_m3": 120, "treatment": "R1", "color": "#4d5459" },
+        { "code": "20 01 21*", "name": "Leuchtstoffröhren", "group": "hazardous", "density_kg_m3": 150, "treatment": "R4" }
+    ],
+    "rules": {
+        "separation_quota_pct": 90,
+        "quota_check_due": "03-31",
+        "register_deadline_days": 10,
+        "retention_years": 3,
+        "hazardous_threshold_t": 2
+    },
+    "evidence_types": ["site_plan", "photos", "practice_records", "acceptor_declaration", "pretreatment_confirmation", "exception_reason"]
+}
