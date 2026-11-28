@@ -8,14 +8,14 @@
         "format:check": "prettier --check resources/"
     },
     "devDependencies": {
-        "prettier": "^3.9.9",
+        "prettier": "^3.10.1",
         "prettier-plugin-tailwindcss": "^0.8.1"
     },
     "dependencies": {
-        "@tailwindcss/vite": "^4.3.3",
-        "concurrently": "^10.0.6",
-        "laravel-vite-plugin": "^3.2.0",
+        "@tailwindcss/vite": "^4.3.5",
+        "concurrently": "^10.0.7",
+        "laravel-vite-plugin": "^3.2.1",
         "tailwindcss": "^4.3.3",
-        "vite": "^8.3.4"
+        "vite": "^8.3.8"
     }
 }
